@@ -18,7 +18,16 @@ namespace ConsoleApp1
         public void Run() { this.ReadTextFiles(); }
         public void ReadTextFiles()
         {
-
+            using (StreamReader file = new StreamReader("U:\Users\732442/beowulf.txt"))
+            {
+                int counter = 0;
+                string ln;
+                while ((ln=file.ReadLine()) !=null)
+                {
+                    Console.WriteLine(ln);
+                    Beowulf.Add(ln);
+                }
+            }
         }
     }
 }
