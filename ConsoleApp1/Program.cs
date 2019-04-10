@@ -25,20 +25,17 @@ namespace ConsoleApp1
         {
             using (StreamReader file = new StreamReader("U:\\Users\\732442/beowulf.txt"))
             {
-                int words = 0;
-                string delim = "";
-                string[] field = null;
-                string line = null;
-                while(!file.EndOfStream)
+                int counter = 0;
+                string ln;
+                while ((ln = file.ReadLine()) !=null )
                 {
-                    line = file.ReadLine();
-                    line.Trim();
-                    field = line.Split(delim.ToCharArray(),StringSplitOptions.RemoveEmptyEntries);
-                    words += field.Length;
+                    Console.WriteLine(ln);
+                        Beowulf.Add(ln);
 
                 }
-                Console.WriteLine("the number of words is {0}", words);
                 file.Close();
+                Console.WriteLine("$ file has counter.");
+
             }
         }
         public int FindNumberofBlankspaces(string line)
