@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +11,8 @@ namespace ConsoleApp1
     class Program
     {
         ArrayList Beowulf;
+        private int countletters;
+
         static void Main(string[] args)
         {
             Program p = new Program();
@@ -18,7 +22,7 @@ namespace ConsoleApp1
         public void Run() { this.ReadTextFiles(); }
         public void ReadTextFiles()
         {
-            using (StreamReader file = new StreamReader("U:\Users\732442/beowulf.txt"))
+            using (StreamReader file = new StreamReader("U:\\Users\\732442/beowulf.txt"))
             {
                 int counter = 0;
                 string ln;
@@ -27,13 +31,13 @@ namespace ConsoleApp1
                     Console.WriteLine(ln);
                     Beowulf.Add(ln);
                 }
-                file.close();
+                file.Close();
                 Console.WriteLine($"File has{counter} line.");
             }
         }
         public int FindNumberofBlankspaces(string line)
         {
-            int counterletters = 0;
+            int countletters = 0;
             int countSpaces = 0;
 
             foreach(char c in line)
