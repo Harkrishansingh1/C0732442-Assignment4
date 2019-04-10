@@ -27,7 +27,21 @@ namespace ConsoleApp1
                     Console.WriteLine(ln);
                     Beowulf.Add(ln);
                 }
+                file.close();
+                Console.WriteLine($"File has{counter} line.");
             }
+        }
+        public int FindNumberofBlankspaces(string line)
+        {
+            int counterletters = 0;
+            int countSpaces = 0;
+
+            foreach(char c in line)
+            {
+                if(char.IsLetter(c)) { countletters++; }
+                if(char.IsWhiteSpace(c)) { countSpaces++; }
+            }
+            return countSpaces;
         }
     }
 }
