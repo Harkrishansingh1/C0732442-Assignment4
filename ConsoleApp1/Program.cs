@@ -25,6 +25,13 @@ namespace ConsoleApp1
             using (StreamReader file = new StreamReader("U:\\Users\\732442/beowulf.txt"))
             {
                 int words = 0;
+                string delim = "";
+                string[] field = null;
+                string line = null;
+                while(!file.EndOfStream)
+                {
+                    line = file.ReadLine();
+                }
             }
         }
         public int FindNumberofBlankspaces(string line)
