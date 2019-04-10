@@ -28,13 +28,14 @@ namespace ConsoleApp1
             {
                 int counter = 0;
                 string ln;
-                while ((ln=file.ReadLine()) !=null)
+                while ((ln = file.ReadLine()) != null)
                 {
                     Console.WriteLine(ln);
                     Beowulf.Add(ln);
                 }
                 file.Close();
-                Console.WriteLine($"File has{counter} line.");
+                counter = File.ReadLines("U:\\Users\\732442/beowulf.txt").Count();
+                Console.WriteLine("Number of lines are " + counter);
             }
         }
         public int FindNumberofBlankspaces(string line)
