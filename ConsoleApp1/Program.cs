@@ -31,7 +31,13 @@ namespace ConsoleApp1
                 while(!file.EndOfStream)
                 {
                     line = file.ReadLine();
+                    line.Trim();
+                    field = line.Split(delim.ToCharArray(),StringSplitOptions.RemoveEmptyEntries);
+                    words += field.Length;
+
                 }
+                Console.WriteLine("the number of words is {0}", words);
+                file.Close();
             }
         }
         public int FindNumberofBlankspaces(string line)
