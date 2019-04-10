@@ -11,8 +11,6 @@ namespace ConsoleApp1
     class Program
     {
         ArrayList Beowulf;
-        private int countletters;
-
         static void Main(string[] args)
         {
             Program p = new Program();
@@ -26,16 +24,7 @@ namespace ConsoleApp1
         {
             using (StreamReader file = new StreamReader("U:\\Users\\732442/beowulf.txt"))
             {
-                int counter = 0;
-                string ln;
-                while ((ln = file.ReadLine()) != null)
-                {
-                    Console.WriteLine(ln);
-                    Beowulf.Add(ln);
-                }
-                file.Close();
-                counter = File.ReadLines("U:\\Users\\732442/beowulf.txt").Count();
-                Console.WriteLine("Number of lines are " + counter);
+                int words = 0;
             }
         }
         public int FindNumberofBlankspaces(string line)
